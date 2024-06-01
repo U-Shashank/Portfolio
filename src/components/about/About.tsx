@@ -32,7 +32,7 @@ const About = () => {
         viewport={{once:true}}
       />
       <motion.p
-        className="py-2 px-20 md:px-8 text-2xl font-poppins text-center text-primary leading-normal"
+        className="py-2 px-20 md:px-8 text-xl xs:text-2xl font-poppins text-center text-primary leading-normal"
         variants={textVariants}
         initial="hidden"
         whileInView="visible"

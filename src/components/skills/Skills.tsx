@@ -5,7 +5,7 @@ import {
 
 const variants = {
   initial: {
-    x: -400,
+    x: -300,
     opacity: 0,
   },
   animate: {
