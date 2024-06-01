@@ -27,7 +27,7 @@ const Contact = () => {
   const sendEmail: SubmitHandler<FormValues> = async (data) => {
     try {
       const res = await emailjs.send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, data)
-      toast.success("Message sent")
+      if(res.status === 200) toast.success("Message sent")
     } catch (error) {
       console.log(error)  
       toast.error("Error")
