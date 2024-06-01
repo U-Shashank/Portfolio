@@ -49,7 +49,7 @@ const Hero = () => {
       <motion.div className="flex gap-4 w-fit m-auto mt-4" variants={variants}>
         {
           items.map((item) => (
-            <a href={item.link} target="_blank" className="text-secondary transition ease-in-out hover:-translate-y-1">{item.icon}</a>
+            <a href={item.link} key={item.link} target="_blank" className="text-secondary transition ease-in-out hover:-translate-y-1">{item.icon}</a>
           ))
         }
       </motion.div>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const variants = {
     initial: {
-      x: -500,
+      x: -300,
       opacity: 0,
     },
     animate: {
@@ -17,7 +17,7 @@ const variants = {
   }
 const variantsX = {
     initial: {
-      x: 500,
+      x: 300,
       opacity: 0,
     },
     animate: {

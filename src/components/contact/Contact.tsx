@@ -1,8 +1,8 @@
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
+import { useEffect} from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-
+import toast from 'react-hot-toast'
 
 type FormValues = {
   from_name: string,
@@ -18,7 +18,6 @@ const Contact = () => {
   const { register, handleSubmit, formState, } = form
   const { errors, isSubmitting } = formState
 
-
   useEffect(() => {
     emailjs.init({
       publicKey: import.meta.env.VITE_PUBLIC_KEY,
@@ -28,10 +27,10 @@ const Contact = () => {
   const sendEmail: SubmitHandler<FormValues> = async (data) => {
     try {
       const res = await emailjs.send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, data)
-      console.log("success" + res);
-
+      toast.success("Message sent")
     } catch (error) {
-      console.log(error)
+      console.log(error)  
+      toast.error("Error")
     }
 
   }
@@ -53,7 +52,7 @@ const Contact = () => {
           </motion.span>
         ))}
       </div>
-      <div className='flex flex-col justify-center gap-4 py-2 px-4 w-[500px] m-auto px-12 font-roboto'>
+      <div className='flex flex-col justify-center gap-4 py-2 px-4 w-full max-w-[500px] m-auto md:w-[500px] px-12 font-roboto'>
 
         <input className="py-2 px-4 outline-none border-secondary border rounded-md bg-secondary/40 placeholder:text-secondary " placeholder="Name" type="text" {
           ...register("from_name", {
@@ -72,6 +71,10 @@ const Contact = () => {
             required: {
               value: true,
               message: "Please enter your email"
+            },
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address"
             }
           })
         } />
@@ -93,7 +96,7 @@ const Contact = () => {
         }
         <button className={`px-5 py-2 w-fit rounded-md mx-auto bg-secondary text-white font-semibold ${isSubmitting ? "opacity-60" : ""}`} type='submit' onClick={handleSubmit(sendEmail)}
           disabled={isSubmitting}>
-          Submit</button>
+          {isSubmitting ? "..." : "Submit"}</button>
       </div>
     </div>
   )

@@ -6,6 +6,7 @@ import Navbar from "./components/hero/Navbar"
 import Sidebar from "./components/hero/Sidebar"
 import Projects from "./components/projects/Projects"
 import Skills from "./components/skills/Skills"
+import { Toaster } from "react-hot-toast"
 
 function App() {
   const [currentPage, setCurrentPage] = useState("Home")
@@ -45,6 +46,28 @@ function App() {
   
   return (
     <>
+      <Toaster
+            containerStyle={{
+              top: 80,
+              left: 20,
+              bottom: 20,
+              right: 20,
+            }}
+            toastOptions={{
+              success: {
+                iconTheme: {
+                  primary: '#76ABAE',
+                  secondary: 'white',
+                },
+              },
+              error: {
+                iconTheme: {
+                  primary: 'red',
+                  secondary: 'white',
+                },
+              },
+            }}
+      />
       <section ref={homeRef} id="Home" className="w-screen h-screen bg-primary snap-center overflow-hidden flex flex-col justify-center">
         <Navbar currentPage={currentPage}/>
         <Sidebar/>

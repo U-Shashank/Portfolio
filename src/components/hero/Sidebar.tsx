@@ -33,7 +33,7 @@ const Sidebar = () => {
         <motion.div className={`flex flex-col fixed bg-white top-0 bottom-0 w-1/2 justify-center items-center m-auto ${!open ? "hidden" : ""}`} variants={variants}>
         {
             links.map((link) => (
-                <a href={`#${link}`} className="text-secondary py-2 text-xl font-poppins font-semibold transition ease-in-out hover:scale-150">{link}</a>
+                <a href={`#${link}`} key={link} className="text-secondary py-2 text-xl font-poppins font-semibold transition ease-in-out hover:scale-150">{link}</a>
             ))
         }
         </motion.div>

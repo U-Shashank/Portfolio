@@ -21,9 +21,9 @@ const textVariants = {
 const About = () => {
 
   return (
-    <div className="flex flex-col h-full justify-center gap-10 md:gap-10 items-center m-3 md:flex-row">
+    <div className="flex flex-col h-full justify-center gap-10 md:gap-10 items-center m-3 md:flex-row m-auto">
       <motion.img
-        className="h-64 "
+        className="h-64 hidden xs:block"
         src="/code.svg"
         alt=""
         variants={imageVariants}
