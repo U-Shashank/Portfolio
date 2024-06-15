@@ -14,7 +14,7 @@ const items = [{
 },
 {
   icon: <FaTwitter className="w-8 h-8"/>,
-  link: "https://x.com/ShashankUp46820",
+  link: "https://x.com/shashanx30",
 },
 {
   icon: <IoIosDocument className="w-8 h-8"/>,
