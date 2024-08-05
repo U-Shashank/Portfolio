@@ -6,7 +6,7 @@ import { IoIosDocument } from "react-icons/io";
 
 const items = [{
   icon: <FaLinkedinIn className="w-8 h-8"/>,
-  link: "https://www.linkedin.com/in/upadhyay-shashank",
+  link: "https://www.linkedin.com/in/shashanku30",
 },
 {
   icon: <FaGithub className="w-8 h-8"/>,
